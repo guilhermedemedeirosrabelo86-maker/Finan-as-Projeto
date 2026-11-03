@@ -1,0 +1,82 @@
+:root {
+  /* Cores da marca */
+  --cor-primaria: #0e9f6e;
+  --cor-primaria-escura: #057a55;
+  --cor-primaria-clara: #def7ec;
+
+  /* Cores de significado (financeiro) */
+  --cor-saldo: var(--cor-primaria);
+  --cor-receita: #0e9f6e;
+  --cor-receita-clara: #e7f6ef;
+  --cor-despesa: #dc2626;
+  --cor-despesa-clara: #fdecec;
+
+  /* Neutros */
+  --cor-fundo: #f3f4f6;
+  --cor-superficie: #ffffff;
+  --cor-superficie-hover: #f7f7f8;
+  --cor-superficie-ativa: #f0f1f3;
+  --cor-borda: #e5e7eb;
+  --cor-texto-forte: #111827;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #52525b;
+  --cor-texto-apagado: #a1a1aa;
+  --cor-texto-invertido: #ffffff;
+  --cor-foco: #0e9f6e;
+
+  /* Espaçamentos */
+  --espaco-xs: 4px;
+  --espaco-sm: 8px;
+  --espaco-md: 16px;
+  --espaco-lg: 24px;
+  --espaco-xl: 32px;
+
+  /* Bordas arredondadas */
+  --raio-sm: 6px;
+  --raio-md: 10px;
+  --raio-lg: 16px;
+
+  /* Sombras */
+  --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Tipografia */
+  --fonte: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --texto-sm: 14px;
+  --texto-md: 16px;
+  --texto-lg: 18px;
+  --texto-xl: 24px;
+  --texto-xxl: 28px;
+
+  /* Animação */
+  --transicao: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Botões herdam a fonte da página (por padrão o navegador não faz isso) */
+button {
+  font-family: inherit;
+}
+
+/* Contorno visível para quem navega pelo teclado (Tab) */
+:focus-visible {
+  outline: 2px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
