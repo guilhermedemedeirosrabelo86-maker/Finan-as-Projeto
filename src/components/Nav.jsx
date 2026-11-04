@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import SeletorMes from "./SeletorMes";
+import SeletorCategorias from "./SeletorCategorias";
 
 function Nav(){
     return (
@@ -12,9 +13,7 @@ function Nav(){
                 <button type="button">Receitas</button>
             </div>
 
-            <select className="filtro-select">
-                <option>Todas as categorias</option>
-            </select>
+            <SeletorCategorias />
 
             <label className="filtro-busca">
                 <Search size={16} />

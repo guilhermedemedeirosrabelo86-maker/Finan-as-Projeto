@@ -1,28 +1,35 @@
 :root {
-  /* Cores da marca */
-  --cor-primaria: #0e9f6e;
-  --cor-primaria-escura: #057a55;
-  --cor-primaria-clara: #def7ec;
+  /* Cores da marca: azul-cobalto */
+  --cor-primaria: #2b4eff;
+  --cor-primaria-escura: #1a36d6;
+  --cor-primaria-clara: #eaeeff;
+
+  /* Noite: o azul escuro da lateral e do card de saldo */
+  --cor-noite: #0e1530;
+  --cor-noite-suave: #1a2347;
+  --cor-noite-borda: rgba(255, 255, 255, 0.08);
+  --cor-noite-texto: #e6eaff;
+  --cor-noite-apagado: #8a93b8;
 
   /* Cores de significado (financeiro) */
   --cor-saldo: var(--cor-primaria);
-  --cor-receita: #0e9f6e;
-  --cor-receita-clara: #e7f6ef;
-  --cor-despesa: #dc2626;
+  --cor-receita: #0f9d58;
+  --cor-receita-clara: #e3f6ec;
+  --cor-despesa: #e5484d;
   --cor-despesa-clara: #fdecec;
 
-  /* Neutros */
-  --cor-fundo: #f3f4f6;
+  /* Neutros (levemente azulados) */
+  --cor-fundo: #f4f6fb;
   --cor-superficie: #ffffff;
-  --cor-superficie-hover: #f7f7f8;
-  --cor-superficie-ativa: #f0f1f3;
-  --cor-borda: #e5e7eb;
-  --cor-texto-forte: #111827;
-  --cor-texto: #1f2937;
-  --cor-texto-suave: #52525b;
-  --cor-texto-apagado: #a1a1aa;
+  --cor-superficie-hover: #f6f8fd;
+  --cor-superficie-ativa: #eef1f8;
+  --cor-borda: #e3e7f0;
+  --cor-texto-forte: #0e1530;
+  --cor-texto: #2a3150;
+  --cor-texto-suave: #5b6380;
+  --cor-texto-apagado: #9aa1bb;
   --cor-texto-invertido: #ffffff;
-  --cor-foco: #0e9f6e;
+  --cor-foco: #2b4eff;
 
   /* Espaçamentos */
   --espaco-xs: 4px;
@@ -32,24 +39,27 @@
   --espaco-xl: 32px;
 
   /* Bordas arredondadas */
-  --raio-sm: 6px;
-  --raio-md: 10px;
-  --raio-lg: 16px;
+  --raio-sm: 8px;
+  --raio-md: 14px;
+  --raio-lg: 20px;
+  --raio-pilula: 999px;
 
   /* Sombras */
-  --sombra-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-sm: 0 1px 2px rgba(14, 21, 48, 0.04), 0 2px 8px rgba(14, 21, 48, 0.04);
+  --sombra-md: 0 12px 32px rgba(14, 21, 48, 0.14);
+  --sombra-azul: 0 8px 20px rgba(43, 78, 255, 0.28);
 
   /* Tipografia */
-  --fonte: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fonte: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fonte-titulo: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
   --texto-sm: 14px;
   --texto-md: 16px;
   --texto-lg: 18px;
   --texto-xl: 24px;
-  --texto-xxl: 28px;
+  --texto-xxl: 36px;
 
   /* Animação */
-  --transicao: 0.2s ease;
+  --transicao: 0.18s ease;
 }
 
 * {
@@ -62,6 +72,7 @@ body {
   font-family: var(--fonte);
   background: var(--cor-fundo);
   color: var(--cor-texto);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Botões herdam a fonte da página (por padrão o navegador não faz isso) */
