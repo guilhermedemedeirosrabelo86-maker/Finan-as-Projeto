@@ -2,13 +2,18 @@ import saldoAtual from '../utils/saldoAtual.js';
 import Atalhos from '../components/Atalhos.jsx';
 import Card from '../components/Card.jsx'; 
 import Header from '../components/Header.jsx';
+import NomeBanco from '../components/NomeBanco.jsx';
 import { Wallet, ArrowDownLeft, ArrowUpRight } from 'lucide-react';
 
 function Inicio() {
   return (
 <div className="pagina-inicio">
     
-    <Header />
+    <Header
+      titulo={<>Bem-vindo ao <NomeBanco /></>}
+      subtitulo="Acompanhe seu dinheiro e faça movimentações."
+      textoBotao="Nova movimentação"
+    />
 
     
 

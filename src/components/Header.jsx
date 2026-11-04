@@ -1,18 +1,19 @@
 import { Plus } from 'lucide-react'
-import NomeBanco from "./NomeBanco"
 
-function Header() {
+function Header({ titulo, subtitulo, textoBotao, onClickBotao }) {
   return (
-    <div className="topo-inicio">
+    <div className="topo-pagina">
       <div>
-        <h1>Bem-vindo ao <NomeBanco /></h1>
-        <p className="topo-subtitulo">Acompanhe seu dinheiro e faça movimentações.</p>
+        <h1>{titulo}</h1>
+        {subtitulo && <p className="topo-subtitulo">{subtitulo}</p>}
       </div>
 
-      <button className="button-movimentation">
-        <Plus size={18} />
-        Nova movimentação
-      </button>
+      {textoBotao && (
+        <button className="button-movimentation" onClick={onClickBotao}>
+          <Plus size={18} />
+          {textoBotao}
+        </button>
+      )}
     </div>
   )
 }

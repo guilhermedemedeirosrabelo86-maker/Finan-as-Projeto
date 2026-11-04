@@ -100,7 +100,7 @@
 
 /* ===== Topo da página ===== */
 
-.topo-inicio {
+.topo-pagina {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,7 +108,7 @@
   margin-bottom: var(--espaco-xl);
 }
 
-.topo-inicio h1 {
+.topo-pagina h1 {
   font-size: var(--texto-xxl);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -318,8 +318,214 @@
     padding: var(--espaco-lg) var(--espaco-md);
   }
 
-  .topo-inicio {
+  .topo-pagina {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Filtros da tela Transações */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-sm);
+  margin-bottom: var(--espaco-lg);
+}
+
+.filtro-mes,
+.filtro-tipo,
+.filtro-select,
+.filtro-busca {
+  height: 38px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  font-family: var(--fonte);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto);
+  box-shadow: var(--sombra-sm);
+}
+
+.filtro-mes {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xs);
+  padding: 0 var(--espaco-xs);
+  font-weight: 600;
+  color: var(--cor-texto-forte);
+}
+
+.filtro-mes {
+  position: relative;
+}
+
+.filtro-mes > button.filtro-mes-atual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-xs);
+  min-width: 140px;
+  height: 30px;
+  padding: 0 var(--espaco-sm);
+  color: var(--cor-texto-forte);
+}
+
+.filtro-mes-atual svg {
+  color: var(--cor-texto-apagado);
+}
+
+.painel-meses {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 10;
+  width: 260px;
+  padding: var(--espaco-md);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-md);
+}
+
+.painel-meses-ano {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-sm);
+  font-weight: 600;
+  color: var(--cor-texto-forte);
+}
+
+.painel-meses-grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-xs);
+}
+
+.painel-meses button {
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  border-radius: var(--raio-sm);
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.painel-meses-ano button {
+  display: grid;
+  place-items: center;
+  padding: 6px;
+}
+
+.painel-meses-grade button {
+  padding: var(--espaco-sm) 0;
+  font-weight: 500;
+}
+
+.painel-meses button:hover {
+  background: var(--cor-superficie-hover);
+  color: var(--cor-texto-forte);
+}
+
+.painel-meses-grade button.ativo {
+  background: var(--cor-primaria-clara);
+  color: var(--cor-primaria-escura);
+  font-weight: 600;
+}
+
+.painel-meses button:focus-visible {
+  outline: 2px solid var(--cor-foco);
+  outline-offset: 1px;
+}
+
+.filtro-mes > button,
+.filtro-tipo button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border-radius: var(--raio-sm);
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.filtro-mes > button {
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  color: var(--cor-texto-suave);
+}
+
+.filtro-mes > button:hover,
+.filtro-tipo button:hover {
+  background: var(--cor-superficie-hover);
+  color: var(--cor-texto-forte);
+}
+
+.filtro-tipo {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+}
+
+.filtro-tipo button {
+  padding: 0 var(--espaco-md);
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+}
+
+.filtro-tipo button.ativo {
+  background: var(--cor-primaria-clara);
+  color: var(--cor-primaria-escura);
+  font-weight: 600;
+}
+
+.filtro-select {
+  padding: 0 var(--espaco-md);
+  cursor: pointer;
+  transition: border-color var(--transicao);
+}
+
+.filtro-select:hover {
+  border-color: var(--cor-texto-apagado);
+}
+
+.filtro-busca {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  padding: 0 var(--espaco-md);
+  color: var(--cor-texto-apagado);
+  cursor: text;
+  transition: border-color var(--transicao);
+}
+
+.filtro-busca input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: var(--cor-texto);
+}
+
+.filtro-busca input::placeholder {
+  color: var(--cor-texto-apagado);
+}
+
+.filtro-busca:focus-within,
+.filtro-select:focus-visible {
+  border-color: var(--cor-foco);
+  outline: none;
+}
+
+.filtro-mes > button:focus-visible,
+.filtro-tipo button:focus-visible {
+  outline: 2px solid var(--cor-foco);
+  outline-offset: 1px;
 }

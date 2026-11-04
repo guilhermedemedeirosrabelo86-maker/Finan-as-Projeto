@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { House, ArrowDownUp, ChartPie, Settings } from 'lucide-react'
+import Transacoes from './pages/Transacoes.jsx'
+import { House, ArrowDownUp, ChartPie, Settings, Tags, TagsIcon, TagPlusIcon, TagPlus } from 'lucide-react'
 import Sidebar from './components/Sidebar.jsx'
 import Inicio from './pages/Inicio.jsx'
 import './App.css'
@@ -8,7 +9,8 @@ const ITENS_MENU = [
   { nome: 'Início', icone: House },
   { nome: 'Transações', icone: ArrowDownUp },
   { nome: 'Relatórios', icone: ChartPie },
-  { nome: 'Configurações', icone: Settings },
+  { nome: 'Categorias', icone: TagsIcon},
+  { nome: 'Configurações', icone: Settings }
 ]
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
       />
       <main className="conteudo">
         {paginaAtiva === 'Início' && <Inicio />}
+        {paginaAtiva === 'Transações' && <Transacoes />}
       </main>
     </div>
   )
